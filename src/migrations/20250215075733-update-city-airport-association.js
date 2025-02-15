@@ -13,12 +13,11 @@ module.exports = {
         table: "Cities",
         field:"id"
       },
-      onUpdate :"CASCADE",
       onDelete:"CASCADE"
     })
   },
 
   async down (queryInterface, Sequelize) {
-    await QueryInterface.removeConstraint("Airports","city_foreign_key_constraint")
+    await queryInterface.removeConstraint("Airports","city_foreign_key_constraint")
   }
 };
